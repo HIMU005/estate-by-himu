@@ -1,5 +1,6 @@
 
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const ShortDetails = ({ fakeDatum }) => {
     const {
@@ -7,11 +8,11 @@ const ShortDetails = ({ fakeDatum }) => {
         estate_title,
         segment_name,
         description,
-        price,
-        status,
-        area,
-        location,
-        facilities,
+        // price,
+        // status,
+        // area,
+        // location,
+        // facilities,
         image,
     } = fakeDatum;
 
@@ -23,7 +24,15 @@ const ShortDetails = ({ fakeDatum }) => {
                     <span className="block text-lg font-medium tracking-widest uppercase dark:text-violet-600">{estate_title}</span>
                     <h2 className="text-xl font-semibold tracking-wide">{segment_name}</h2>
                 </div>
-                <p className="dark:text-gray-800">Mauris et lorem at elit tristique dignissim et ullamcorper elit. In sed feugiat mi. Etiam ut lacinia dui.</p>
+
+
+                <div className='container'>
+                    <p className="dark:text-gray-800">{description.slice(0, 150)} </p>
+                    <Link to={{
+                        pathname: `/details/${id}`,
+                        state: { fakeDatum }
+                    }} className='btn btn-link'>Read More</Link>
+                </div>
             </div>
         </div>
     );
@@ -31,14 +40,9 @@ const ShortDetails = ({ fakeDatum }) => {
 export default ShortDetails;
 
 ShortDetails.propTypes = {
-    id: PropTypes.string,
+    id: PropTypes.number,
+    fakeDatum: PropTypes.object,
+    image: PropTypes.string,
     estate_title: PropTypes.string,
     segment_name: PropTypes.string,
-    description: PropTypes.string,
-    price: PropTypes.string,
-    status: PropTypes.string,
-    area: PropTypes.string,
-    location: PropTypes.string,
-    facilities: PropTypes.array,
-    image: PropTypes.string
 }

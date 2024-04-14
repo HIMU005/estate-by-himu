@@ -1,11 +1,9 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../routes/provider/AuthProvider";
-import { set } from "react-hook-form";
 
 const Navbar = () => {
     const { user, setUser, logOut } = useContext(AuthContext);
-    console.log(typeof user);
 
     const handleSignOut = () => {
         logOut()
@@ -18,6 +16,7 @@ const Navbar = () => {
         <li><NavLink to={'/login'}>Login</NavLink></li>
         <li><NavLink to={'/register'}>Register</NavLink></li>
         <li><NavLink to={'/update'}>Update Profile</NavLink></li>
+        <li><NavLink to={'/profile'}>View Profile</NavLink></li>
     </>
 
     return (
