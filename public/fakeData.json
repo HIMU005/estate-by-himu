@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Luxury Penthouse with Skyline Views",
+    "segment_name": "Penthouse",
+    "description": "This luxurious penthouse offers breathtaking skyline views of the city. Featuring modern design, high-end finishes, and spacious living areas. The floor-to-ceiling windows provide abundant natural light throughout the day, creating a bright and airy ambiance. The expansive terrace is perfect for entertaining guests or enjoying quiet moments while taking in the cityscape.",
+    "price": "$5,000,000",
+    "status": "sale",
+    "area": "3,000 sq ft",
+    "location": "New York City",
+    "facilities": ["Spacious living room", "Infinity pool", "Private terrace"],
+    "image": "https://i.ibb.co/CnZ0pnq/01.jpg"
+  },
+  {
+    "id": 2,
+    "estate_title": "Beachfront Villa in Paradise",
+    "segment_name": "Beachfront Villa",
+    "description": "Experience luxury living with this stunning beachfront villa. Enjoy direct access to the beach, panoramic ocean views, and resort-style amenities. The villa features expansive outdoor living spaces, including a beachfront terrace with infinity pool, outdoor kitchen, and lounge area. Inside, the open-concept design and high-end furnishings create a comfortable and elegant retreat.",
+    "price": "$10,000,000",
+    "status": "sale",
+    "area": "5,000 sq ft",
+    "location": "Malibu, California",
+    "facilities": ["Private beach access", "Infinity pool", "Outdoor kitchen"],
+    "image": "https://i.ibb.co/zhPWctM/02.jpg"
+  },
+  {
+    "id": 3,
+    "estate_title": "Exclusive Resort on Private Island",
+    "segment_name": "Resort",
+    "description": "Escape to your own private island paradise with this exclusive resort. Featuring overwater bungalows, pristine beaches, and world-class amenities. The resort offers a range of activities, from snorkeling and diving to spa treatments and gourmet dining. Each overwater bungalow boasts uninterrupted ocean views and direct access to the crystal-clear waters below.",
+    "price": "$20,000,000",
+    "status": "sale",
+    "area": "10 acres",
+    "location": "Bora Bora",
+    "facilities": [
+      "Overwater bungalows",
+      "Private beach",
+      "Spa and wellness center"
+    ],
+    "image": "https://i.ibb.co/M7Wx82r/03.jpg"
+  },
+  {
+    "id": 4,
+    "estate_title": "Private Island Retreat",
+    "segment_name": "Private Island",
+    "description": "Experience ultimate luxury with your own private island retreat. Relax in seclusion surrounded by crystal-clear waters and pristine beaches. The island features multiple luxurious accommodations, including beachfront villas and bungalows, each offering unparalleled privacy and breathtaking views. Enjoy a range of outdoor activities, from snorkeling and kayaking to sunset cruises and beachside bonfires.",
+    "price": "$50,000,000",
+    "status": "sale",
+    "area": "20 acres",
+    "location": "Caribbean",
+    "facilities": ["Luxurious accommodations", "Private beachfront", "Helipad"],
+    "image": "https://i.ibb.co/7K8bPPV/04.jpg"
+  },
+  {
+    "id": 5,
+    "estate_title": "Luxurious Mansion in Beverly Hills",
+    "segment_name": "Mansion",
+    "description": "Live like a Hollywood star in this luxurious mansion located in the prestigious neighborhood of Beverly Hills. Featuring elegant interiors, expansive grounds, and breathtaking views. The mansion boasts a grand foyer with a sweeping staircase, multiple living and dining areas, a state-of-the-art home theater, and a gourmet kitchen with top-of-the-line appliances. The outdoor space includes a resort-style pool, tennis court, and lush gardens.",
+    "price": "$30,000,000",
+    "status": "sale",
+    "area": "15,000 sq ft",
+    "location": "Beverly Hills, California",
+    "facilities": ["Grand foyer", "Home theater", "Tennis court"],
+    "image": "https://i.ibb.co/hMdQg62/05.webp"
+  },
+  {
+    "id": 6,
+    "estate_title": "Secluded Villa with Mountain Views",
+    "segment_name": "Villa",
+    "description": "Escape to this secluded villa nestled in the mountains, offering stunning panoramic views and unparalleled privacy. Featuring luxurious amenities and expansive outdoor living spaces. The villa features a mountain-view terrace with a heated infinity pool, outdoor kitchen, and fire pit, perfect for entertaining or relaxing with family and friends. Inside, the spacious living areas are elegantly furnished with designer pieces and offer breathtaking views from every room.",
+    "price": "$8,000,000",
+    "status": "sale",
+    "area": "7,000 sq ft",
+    "location": "Aspen, Colorado",
+    "facilities": ["Mountain-view terrace", "Home gym", "Wine cellar"],
+    "image": "https://i.ibb.co/zQ1HDc7/06.jpg"
+  }
+]

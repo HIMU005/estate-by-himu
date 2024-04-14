@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
     const { loginUser, user, setUser, googleLogIn } = useContext(AuthContext);
     const [loginError, setLoginError] = useState('');
+
     console.log(user);
     const navigate = useNavigate();
     const {
@@ -16,14 +17,16 @@ const Login = () => {
     } = useForm();
 
     const onSubmit = (data) => {
-        const email = data.email;
-        const password = data.password;
+        console.log(data);
+        // const email = data.email;
+        // const password = data.password;
+        const { email, password } = data;
         setLoginError("");
 
         loginUser(email, password)
             .then(result => {
-                console.log(result.user.email);
-                setUser(result.user.email),
+                console.log(result.user);
+                setUser(result.user),
                     navigate('/')
             })
             .catch(error => {
@@ -37,8 +40,8 @@ const Login = () => {
     const handleLogInWithGoogle = () => {
         googleLogIn()
             .then(result => {
-                console.log(result.user.email);
-                setUser(result.user.email)
+                console.log(typeof result.user);
+                setUser(result.user)
                 navigate('/')
             })
             .catch(error => console.log(error))

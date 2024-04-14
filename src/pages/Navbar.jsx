@@ -1,17 +1,16 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../routes/provider/AuthProvider";
+import { set } from "react-hook-form";
 
 const Navbar = () => {
     const { user, setUser, logOut } = useContext(AuthContext);
-    console.log(user);
+    console.log(typeof user);
 
     const handleSignOut = () => {
         logOut()
-            .then(result => {
-                setUser(null),
-                    console.log(result)
-            })
+            .then(setUser(null))
+            .catch(error => console.log(error))
     }
 
     const links = <>
@@ -45,7 +44,7 @@ const Navbar = () => {
                     <div className="flex justify-center items-center">
                         <span>
                             {
-                                user && <span className="text-sm">{user.email}</span>
+                                user && <p className="text-sm">{user.email}</p>
                             }
                         </span>
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar ">
@@ -54,12 +53,16 @@ const Navbar = () => {
                             </div>
                         </div>
                     </div>
+
                     {
-                        user && <button onClick={handleSignOut} className="btn btn-primary btn-outline">logOut</button>
+                        user ? <>
+                            <button onClick={handleSignOut} className="btn btn-primary btn-outline">logOut</button>
+                        </> :
+                            <>
+                                <Link to={"/login"} className="btn btn-secondary btn-outline">SignIn</Link>
+                            </>
                     }
-                    {
-                        user || <Link to={"/login"} className="btn btn-secondary btn-outline">SignIn</Link>
-                    }
+
                 </div>
             </div>
         </div>

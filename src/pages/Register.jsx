@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 const Register = () => {
     const [passError, setPassError] = useState("");
     const [registerError, setRegisterError] = useState('');
-    const { createUser } = useContext(AuthContext);
+    const { createUser, setUser } = useContext(AuthContext);
 
     const navigate = useNavigate();
     const {
@@ -18,10 +18,13 @@ const Register = () => {
     } = useForm();
 
     const onSubmit = (data) => {
+        console.log(data);
         // const name = data.name;
-        const email = data.email;
+        // const email = data.email;
         // const photoUrL = data.photoUrl;
-        const password = data.password;
+        // const password = data.password;
+
+        const { email, password } = data;
         setPassError("");
         setRegisterError("");
 
@@ -39,7 +42,8 @@ const Register = () => {
         // }
         createUser(email, password)
             .then(result => {
-                console.log(result.user);
+                console.log(typeof result.user);
+                // setUser(result.user)
                 navigate('/login')
             })
             .catch(error => {
