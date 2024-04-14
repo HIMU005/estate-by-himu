@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../routes/provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const ViewProfile = () => {
     const { user } = useContext(AuthContext);
@@ -9,7 +10,6 @@ const ViewProfile = () => {
         photoURL,
         displayName,
         phoneNumber,
-
     } = user;
     console.log(email, photoURL, phoneNumber, displayName);
     return (
@@ -18,22 +18,21 @@ const ViewProfile = () => {
                 <h1 className="text-xl">Your Email: </h1>
                 <h2 className="border-2 border-black rounded-2xl p-2 px-4">{email}</h2>
             </div>
+
             <div className="flex gap-5 items-center">
                 <h1 className="text-xl">Your Name: </h1>
                 <h2 className="border-2 border-black rounded-2xl p-2 px-4">{displayName}</h2>
             </div>
-            {
-                photoURL ?
-                    <div className="flex gap-5 items-center">
-                        <h1 className="text-xl">photo </h1>
-                        <img src={photoURL} alt="" />
-                    </div>
-                    :
-                    <div className="flex gap-5 items-center">
-                        <h1 className="text-xl">photo </h1>
+
+
+            <div className="flex gap-5 items-center">
+                <h1 className="text-xl">photo </h1>
+                {
+                    photoURL ?
+                        <img src={photoURL} alt="Not available" /> :
                         <h2 className="border-2 border-black rounded-2xl p-2 px-4">Not available </h2>
-                    </div>
-            }
+                }
+            </div>
 
             <div className="flex gap-5 items-center">
                 <h1 className="text-xl">Your Phone Number: </h1>
@@ -43,6 +42,8 @@ const ViewProfile = () => {
                         <h2 className="border-2 border-black rounded-2xl p-2 px-4">Not Available</h2>
                 }
             </div>
+
+            <h2>Want to Updade? <Link to={'/update'} className="btn-link">Click here</Link></h2>
 
         </div>
     );

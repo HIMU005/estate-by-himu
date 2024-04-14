@@ -19,10 +19,6 @@ const Register = () => {
 
     const onSubmit = (data) => {
         console.log(data);
-        // const name = data.name;
-        // const email = data.email;
-        // const photoUrL = data.photoUrl;
-        // const password = data.password;
 
         const { email, password } = data;
         setPassError("");
