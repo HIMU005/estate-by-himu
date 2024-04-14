@@ -18,9 +18,9 @@ const Register = () => {
     } = useForm();
 
     const onSubmit = (data) => {
-        const name = data.name;
+        // const name = data.name;
         const email = data.email;
-        const photoUrL = data.photoUrl;
+        // const photoUrL = data.photoUrl;
         const password = data.password;
         setPassError("");
         setRegisterError("");

@@ -4,6 +4,7 @@ import { AuthContext } from "../routes/provider/AuthProvider";
 
 const Navbar = () => {
     const { user, setUser, logOut } = useContext(AuthContext);
+    console.log(user);
 
     const handleSignOut = () => {
         logOut()
@@ -42,9 +43,11 @@ const Navbar = () => {
                 {/* profile  */}
                 <div className="navbar-end">
                     <div className="flex justify-center items-center">
-                        {
-                            user && <span className="text-sm">{user.email}</span>
-                        }
+                        <span>
+                            {
+                                user && <span className="text-sm">{user.email}</span>
+                            }
+                        </span>
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar ">
                             <div className="w-10 rounded-full">
                                 <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
@@ -55,7 +58,7 @@ const Navbar = () => {
                         user && <button onClick={handleSignOut} className="btn btn-primary btn-outline">logOut</button>
                     }
                     {
-                        user || <Link to={"/login"} className="btn btn-primary btn-outline">SignIn</Link>
+                        user || <Link to={"/login"} className="btn btn-secondary btn-outline">SignIn</Link>
                     }
                 </div>
             </div>
