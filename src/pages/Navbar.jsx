@@ -1,13 +1,25 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../routes/provider/AuthProvider";
 
 const Navbar = () => {
+    const { user, setUser, logOut } = useContext(AuthContext);
+
+    const handleSignOut = () => {
+        logOut()
+            .then(result => {
+                setUser(null),
+                    console.log(result)
+            })
+    }
+
     const links = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
         <li><NavLink to={'/login'}>Login</NavLink></li>
         <li><NavLink to={'/register'}>Register</NavLink></li>
         <li><NavLink to={'/update'}>Update Profile</NavLink></li>
-
     </>
+
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -27,12 +39,24 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
+                {/* profile  */}
                 <div className="navbar-end">
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    <div className="flex justify-center items-center">
+                        {
+                            user && <span className="text-sm">{user.email}</span>
+                        }
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar ">
+                            <div className="w-10 rounded-full">
+                                <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            </div>
                         </div>
                     </div>
+                    {
+                        user && <button onClick={handleSignOut} className="btn btn-primary btn-outline">logOut</button>
+                    }
+                    {
+                        user || <Link to={"/login"} className="btn btn-primary btn-outline">SignIn</Link>
+                    }
                 </div>
             </div>
         </div>

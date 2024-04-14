@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { IoMdPhotos } from "react-icons/io";
+import { AuthContext } from "../routes/provider/AuthProvider";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
     const [passError, setPassError] = useState("");
+    const [registerError, setRegisterError] = useState('');
+    const { createUser } = useContext(AuthContext);
+
+    const navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -17,19 +23,31 @@ const Register = () => {
         const photoUrL = data.photoUrl;
         const password = data.password;
         setPassError("");
+        setRegisterError("");
 
-        if (password.length < 6) {
-            setPassError("Password required 6 characters or longer!!");
-            return
-        }
-        if (!/(?=.*[A-Z]).+/.test(password)) {
-            setPassError('Password must contain at least one uppercase letter');
-            return;
-        }
-        if (!/(?=.*[a-z]).+/.test(password)) {
-            setPassError('Password must contain at least one lowercase letter');
-            return;
-        }
+        // if (password.length < 6) {
+        //     setPassError("Password required 6 characters or longer!!");
+        //     return
+        // }
+        // if (!/(?=.*[A-Z]).+/.test(password)) {
+        //     setPassError('Password must contain at least one uppercase letter');
+        //     return;
+        // }
+        // if (!/(?=.*[a-z]).+/.test(password)) {
+        //     setPassError('Password must contain at least one lowercase letter');
+        //     return;
+        // }
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user);
+                navigate('/login')
+            })
+            .catch(error => {
+                console.log(error);
+                setRegisterError("user already in Use")
+            })
+
+
     }
     return (
         <div>
@@ -61,7 +79,12 @@ const Register = () => {
 
                 </label>
                 <button className="btn btn-primary btn-outline w-full">Register</button>
+                {
+                    registerError &&
+                    <span className="text-red-600 font-bold text-sm">{registerError}</span>
+                }
             </form>
+            <h2 className="w-1/2 mx-auto">Already have an account? <Link to={"/login"} className="btn btn-link">Login</Link></h2>
         </div>
     );
 };
