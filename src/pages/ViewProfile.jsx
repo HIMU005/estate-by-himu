@@ -4,24 +4,28 @@ import { Link } from "react-router-dom";
 
 const ViewProfile = () => {
     const { user } = useContext(AuthContext);
-    console.log(user);
+    // console.log(user);
     const {
         email,
         photoURL,
         displayName,
         phoneNumber,
     } = user;
-    console.log(email, photoURL, phoneNumber, displayName);
+    // console.log(email, photoURL, phoneNumber, displayName);
     return (
         <div className="w-1/2 mx-auto mt-12">
             <div className="flex gap-5 items-center">
                 <h1 className="text-xl">Your Email: </h1>
-                <h2 className="border-2 border-black rounded-2xl p-2 px-4">{email}</h2>
+                <h2 className="border-2 border-black rounded-2xl p-2 px-4 bg-yellow-200">{email}</h2>
             </div>
 
             <div className="flex gap-5 items-center">
                 <h1 className="text-xl">Your Name: </h1>
-                <h2 className="border-2 border-black rounded-2xl p-2 px-4">{displayName}</h2>
+                {
+                    displayName ?
+                        <h2 className="border-2 border-black rounded-2xl p-2 px-4">{displayName}</h2> :
+                        <h2 className="border-2 border-black rounded-2xl p-2 px-4">Not available</h2>
+                }
             </div>
 
 
@@ -29,7 +33,7 @@ const ViewProfile = () => {
                 <h1 className="text-xl">photo </h1>
                 {
                     photoURL ?
-                        <img src={photoURL} alt="Not available" /> :
+                        <img className="text-red-500" src={photoURL} alt="Not available or Image not valid" /> :
                         <h2 className="border-2 border-black rounded-2xl p-2 px-4">Not available </h2>
                 }
             </div>

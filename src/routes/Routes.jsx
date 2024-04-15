@@ -44,7 +44,10 @@ const router = createBrowserRouter([
             },
             {
                 path: '/profile',
-                element: <ViewProfile />
+                element:
+                    <PrivateRoute>
+                        <ViewProfile />
+                    </PrivateRoute>
             }
         ])
     }
