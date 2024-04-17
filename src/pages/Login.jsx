@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet-async";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const Login = () => {
-    const { loginUser, setUser, googleLogIn } = useContext(AuthContext);
+    const { loginUser, setUser, googleLogIn, gitHubLogIn } = useContext(AuthContext);
     const [loginError, setLoginError] = useState('');
     const [show, setShow] = useState(false);
 
@@ -44,6 +44,14 @@ const Login = () => {
 
     const handleLogInWithGoogle = () => {
         googleLogIn()
+            .then(result => {
+                setUser(result.user)
+                navigate(located.state || "/")
+            })
+            .catch(error => console.log(error))
+    }
+    const handleLogInWithGitHub = () => {
+        gitHubLogIn()
             .then(result => {
                 setUser(result.user)
                 navigate(located.state || "/")
@@ -96,7 +104,7 @@ const Login = () => {
                 className="w-1/2 mx-auto">Do not have an account? <Link to={"/register"} className="btn btn-link">Register</Link></h2>
             <div className="flex justify-evenly w-2/3 mx-auto mt-3">
                 <button onClick={handleLogInWithGoogle} className="btn btn-primary">Google SignIn</button>
-                <button onClick={handleLogInWithGoogle} className="btn btn-secondary">Github SignIn</button>
+                <button onClick={handleLogInWithGitHub} className="btn btn-secondary">Github SignIn</button>
             </div>
         </div>
     );
