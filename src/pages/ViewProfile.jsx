@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../routes/provider/AuthProvider";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const ViewProfile = () => {
     const { user } = useContext(AuthContext);
@@ -14,6 +15,9 @@ const ViewProfile = () => {
     // console.log(email, photoURL, phoneNumber, displayName);
     return (
         <div className="w-1/2 mx-auto mt-12">
+            <Helmet>
+                <title>E-State/View-Profile</title>
+            </Helmet>
             <div className="flex gap-5 items-center">
                 <h1 className="text-xl">Your Email: </h1>
                 <h2 className="border-2 border-black rounded-2xl p-2 px-4 bg-yellow-200">{email}</h2>

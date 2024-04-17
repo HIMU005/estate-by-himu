@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../routes/provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const { loginUser, setUser, googleLogIn } = useContext(AuthContext);
@@ -50,6 +51,9 @@ const Login = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>E-State/Login</title>
+            </Helmet>
             <form onSubmit={handleSubmit(onSubmit)} className="w-1/2 mx-auto space-y-3 mt-10">
 
                 {/* email  */}

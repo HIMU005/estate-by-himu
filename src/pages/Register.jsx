@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { IoMdPhotos } from "react-icons/io";
 import { AuthContext } from "../routes/provider/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
     const [passError, setPassError] = useState("");
@@ -51,6 +52,9 @@ const Register = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>E-State/Register</title>
+            </Helmet>
             <form onSubmit={handleSubmit(onSubmit)} className="w-1/2 mx-auto space-y-3 mt-10">
 
                 {/* name  */}

@@ -7,6 +7,7 @@ import { IoMdPhotos } from "react-icons/io";
 import { FaPhone } from "react-icons/fa6";
 import { updateProfile } from "firebase/auth";
 import auth from "../Firebase/firebase.config";
+import { Helmet } from "react-helmet-async";
 
 
 const UpdateProfile = () => {
@@ -51,6 +52,9 @@ const UpdateProfile = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>E-State/Update-Profile</title>
+            </Helmet>
             <form onSubmit={handleSubmit(onSubmit)} className="w-1/2 mx-auto space-y-3 mt-10">
 
                 {/* name  */}
