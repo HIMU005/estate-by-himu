@@ -10,9 +10,7 @@ const Slide = ({ fakeDatum }) => {
         description,
         price,
         status,
-        area,
         location,
-        facilities,
         image,
     } = fakeDatum;
 
@@ -30,6 +28,7 @@ const Slide = ({ fakeDatum }) => {
                     <h2 className="text-xl my-3">{segment_name}</h2>
                     <p className="">{description.slice(0, 150)} </p>
                     <h2 className='my-3 font-bold text-lg'>{price}  <span className='ml-4 text-primary'>ON {status}</span></h2>
+                    <h3 className='text-lg text-secondary'>{location}</h3>
                 </div>
             </div>
         </Link>

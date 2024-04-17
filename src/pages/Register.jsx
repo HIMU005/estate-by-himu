@@ -32,18 +32,18 @@ const Register = () => {
         setPassError("");
         setRegisterError("");
 
-        // if (password.length < 6) {
-        //     setPassError("Password required 6 characters or longer!!");
-        //     return
-        // }
-        // if (!/(?=.*[A-Z]).+/.test(password)) {
-        //     setPassError('Password must contain at least one uppercase letter');
-        //     return;
-        // }
-        // if (!/(?=.*[a-z]).+/.test(password)) {
-        //     setPassError('Password must contain at least one lowercase letter');
-        //     return;
-        // }
+        if (password.length < 6) {
+            setPassError("Password required 6 characters or longer!!");
+            return
+        }
+        if (!/(?=.*[A-Z]).+/.test(password)) {
+            setPassError('Password must contain at least one uppercase letter');
+            return;
+        }
+        if (!/(?=.*[a-z]).+/.test(password)) {
+            setPassError('Password must contain at least one lowercase letter');
+            return;
+        }
         createUser(email, password)
             .then(result => {
                 console.log(typeof result.user);
