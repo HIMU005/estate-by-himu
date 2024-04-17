@@ -1,7 +1,7 @@
 /* eslint-disable no-const-assign */
 import { useContext, useState } from "react";
 import { AuthContext } from "../routes/provider/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { IoMdPhotos } from "react-icons/io";
 import { FaPhone } from "react-icons/fa6";
@@ -55,7 +55,11 @@ const UpdateProfile = () => {
             <Helmet>
                 <title>E-State/Update-Profile</title>
             </Helmet>
-            <form onSubmit={handleSubmit(onSubmit)} className="w-1/2 mx-auto space-y-3 mt-10">
+            <form
+                data-aos="fade-up"
+                data-aos-delay="50"
+                data-aos-duration="500"
+                onSubmit={handleSubmit(onSubmit)} className="w-1/2 mx-auto space-y-3 mt-10">
 
                 {/* name  */}
                 <label className="input input-bordered flex items-center gap-2">
@@ -77,7 +81,13 @@ const UpdateProfile = () => {
 
                 </label>
                 <button type="submit" className="btn btn-primary btn-outline w-full">Submit</button>
-
+                <h2
+                    data-aos="fade-left"
+                    data-aos-delay="600"
+                    data-aos-duration="500"
+                    className="text-center">
+                    Visit Your Profile <Link to={"/profile"} className="btn btn-link">Click Here</Link>
+                </h2>
             </form>
             {
                 updateError && <h2 className="text-red-600 text-sm text-center">{updateError}</h2>

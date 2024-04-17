@@ -40,46 +40,60 @@ const FullDetails = () => {
                     data-aos="fade-left"
                     data-aos-delay="100"
                     src={image} alt="" className="object-cover object-center w-full rounded-md max-h-[450px]  dark:bg-gray-500" />
+
                 <div className="mt-6 mb-2">
                     <span
                         data-aos="fade-left"
                         data-aos-delay="500"
                         className="block text-lg md:text-3xl lg:text-5xl font-bold tracking-widest uppercase dark:text-violet-600">{estate_title} </span>
+
                     <div className="flex flex-col md:flex-row justify-between md:items-center gap-4">
                         <h2
                             data-aos="fade-left"
                             data-aos-delay="1000"
-                            className=" text-lg md:text-xl lg:text-2xl font-semibold tracking-wide">{segment_name}</h2>
+                            className=" text-lg md:text-xl lg:text-2xl font-semibold tracking-wide">{segment_name}
+                        </h2>
+
                         <h2
                             data-aos="fade-right"
                             data-aos-delay="1000"
-                            className="text-2xl font-semibold tracking-wide bg-accent pl-4 md:pl-0 md:px-3 py-2 rounded-2xl w-44 md:w-auto"> for {status}</h2>
+                            className="text-2xl font-semibold tracking-wide bg-accent pl-4 md:pl-0 md:px-3 py-2 rounded-2xl w-44 md:w-auto"> for {status}
+                        </h2>
                     </div>
                     <h2
                         data-aos="fade-left"
                         data-aos-delay="1500"
-                        className="flex gap-2 items-center"><FaLocationDot className="text-primary" /> {location}</h2>
+                        className="flex gap-2 items-center"><FaLocationDot className="text-primary" /> {location}
+                    </h2>
                     <h2
                         data-aos="fade-left"
-                        data-aos-delay="2000"
-                        className="flex gap-2 items-center my-2"><IoPricetagsSharp /> {price}</h2>
+                        data-aos-delay="1500"
+                        className="flex gap-2 items-center my-2"><IoPricetagsSharp /> {price}
+                    </h2>
                     <h2
                         data-aos="fade-left"
-                        data-aos-delay="2500"
-                    >Area : {area}</h2>
-                    <div className="flex gap-4 my-2 text-lg">
+                        data-aos-delay="1500" >
+                        Area : {area}
+                    </h2>
+                    <div
+                        data-aos="fade-left"
+                        data-aos-delay='4500'
+                        // data-aos-duration="500"
+                        className="flex gap-4 my-2 text-lg">
                         {
-                            facilities.map((facility, idx) => <h2
-                                data-aos="fade-up"
-                                data-aos-delay={3500 + idx * 500}
-                                className="flex gap-3 items-center" key={idx}><FaGrinStars className="text-secondary" /> {facility}</h2>)
+                            facilities.map((facility, idx) =>
+                                <h2
+                                    // data-aos="fade-up"
+                                    // data-aos-delay={4500 + idx * 500}
+                                    className="flex gap-3 items-center" key={idx}><FaGrinStars className="text-secondary" /> {facility}
+                                </h2>)
                         }
                     </div>
                 </div>
 
                 <p
                     data-aos="zoom-in-up"
-                    data-aos-delay="2500"
+                    data-aos-delay="5000"
                     className="text-xl text-justify">{description}</p>
             </div>
         </div>

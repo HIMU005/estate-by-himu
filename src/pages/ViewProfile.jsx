@@ -20,15 +20,27 @@ const ViewProfile = () => {
             </Helmet>
             <div className="flex gap-5 items-center">
                 <h1 className="text-xl">Your Email: </h1>
-                <h2 className="border-2 border-black rounded-2xl p-2 px-4 bg-yellow-200">{email}</h2>
+                <h2
+                    data-aos="fade-left"
+                    data-aos-delay="50"
+                    data-aos-duration="500"
+                    className="border-2 border-black rounded-2xl p-2 px-4 bg-yellow-200">{email}</h2>
             </div>
 
             <div className="flex gap-5 items-center">
                 <h1 className="text-xl">Your Name: </h1>
                 {
                     displayName ?
-                        <h2 className="border-2 border-black rounded-2xl p-2 px-4">{displayName}</h2> :
-                        <h2 className="border-2 border-black rounded-2xl p-2 px-4">Not available</h2>
+                        <h2
+                            data-aos="fade-left"
+                            data-aos-delay="600"
+                            data-aos-duration="500"
+                            className="border-2 border-black rounded-2xl p-2 px-4">{displayName}</h2> :
+                        <h2
+                            data-aos="fade-left"
+                            data-aos-delay="600"
+                            data-aos-duration="500"
+                            className="border-2 border-black rounded-2xl p-2 px-4">Not available</h2>
                 }
             </div>
 
@@ -37,7 +49,11 @@ const ViewProfile = () => {
                 <h1 className="text-xl">photo </h1>
                 {
                     photoURL ?
-                        <img className="text-red-500" src={photoURL} alt="Not available or Image not valid" /> :
+                        <img
+                            data-aos="zoom-in"
+                            data-aos-delay="1000"
+                            data-aos-duration="500"
+                            className="text-red-500" src={photoURL} alt="Not available or Image not valid" /> :
                         <h2 className="border-2 border-black rounded-2xl p-2 px-4">Not available </h2>
                 }
             </div>
@@ -46,12 +62,24 @@ const ViewProfile = () => {
                 <h1 className="text-xl">Your Phone Number: </h1>
                 {
                     phoneNumber ?
-                        <h2 className="border-2 border-black rounded-2xl p-2 px-4">{phoneNumber}</h2> :
-                        <h2 className="border-2 border-black rounded-2xl p-2 px-4">Not Available</h2>
+                        <h2
+                            data-aos="fade-left"
+                            data-aos-delay="1500"
+                            data-aos-duration="500"
+                            className="border-2 border-black rounded-2xl p-2 px-4">{phoneNumber}</h2> :
+                        <h2
+                            data-aos="fade-left"
+                            data-aos-delay="1500"
+                            data-aos-duration="500"
+                            className="border-2 border-black rounded-2xl p-2 px-4">Not Available</h2>
                 }
             </div>
 
-            <h2>Want to Updade? <Link to={'/update'} className="btn-link">Click here</Link></h2>
+            <h2
+                data-aos="fade-left"
+                data-aos-delay="2000"
+                data-aos-duration="500"
+            >Want to Updade? <Link to={'/update'} className="btn-link">Click here</Link></h2>
 
         </div>
     );

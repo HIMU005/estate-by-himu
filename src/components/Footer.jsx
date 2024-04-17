@@ -64,7 +64,7 @@ const Footer = () => {
                             <a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/himu.hashanuzzaman" title="Facebook" className="flex items-center p-1">
                                 <FaFacebook className="text-2xl text-primary" />
                             </a>
-                            <a rel="noopener noreferrer" target="_target" href="https://github.com/HIMU005" title="Github" className="flex items-center p-1">
+                            <a rel="noopener noreferrer" target="_blank" href="https://github.com/HIMU005" title="Github" className="flex items-center p-1">
                                 <FaGithub className="text-2xl" />
                             </a>
                             <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/himuhashanuzzaman/" title="Instagram" className="flex items-center p-1">
