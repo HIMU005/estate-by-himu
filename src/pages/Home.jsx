@@ -15,10 +15,9 @@ const Home = () => {
             <Helmet>
                 <title>E-State/Home</title>
             </Helmet>
-            <h2>I am home</h2>
             <Banner />
             <h2 className="text-3xl text-center">Details of Estate</h2>
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-2 gap-4">
                 {
                     fakeData.map(fakeDatum => <ShortDetails key={fakeDatum.id} fakeDatum={fakeDatum} ></ShortDetails>
                     )

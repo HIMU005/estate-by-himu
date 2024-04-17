@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../routes/provider/AuthProvider";
+import { CgProfile } from "react-icons/cg";
+
 
 const Navbar = () => {
     const { user, setUser, logOut } = useContext(AuthContext);
+    // const { photoURL, email } = user;
 
     const handleSignOut = () => {
         logOut()
@@ -20,7 +23,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div>
+        <div className="mt-4">
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -31,7 +34,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <NavLink to={"/"} className="btn btn-ghost text-xl">E-State</NavLink>
+                    <NavLink to={"/"} className="btn btn-ghost text-2xl">E-State</NavLink>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -48,7 +51,19 @@ const Navbar = () => {
                         </span>
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar ">
                             <div className="w-10 rounded-full">
-                                <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                {
+                                    user ?
+                                        <>
+                                            <div className="tooltip" data-tip="Home">
+                                                <button className="tooltip" data-tip="ok">
+                                                    <img src={user.photoURL} alt="Not found" />
+                                                </button>
+                                            </div>
+                                        </> :
+                                        <Link to={'/login'}>
+                                            <CgProfile className="text-4xl" />
+                                        </Link>
+                                }
                             </div>
                         </div>
                     </div>

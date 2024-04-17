@@ -17,7 +17,13 @@ const ShortDetails = ({ fakeDatum }) => {
     } = fakeDatum;
 
     return (
-        <div>
+        <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+        // data-aos-anchor-placement="bottom-bottom"
+        >
             <div className=" p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
                 <img src={image} alt="" className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />
                 <div className="mt-6 mb-2">
@@ -34,7 +40,7 @@ const ShortDetails = ({ fakeDatum }) => {
                     }} className='btn btn-link'>Read More</Link>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 export default ShortDetails;

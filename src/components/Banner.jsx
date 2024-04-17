@@ -23,7 +23,7 @@ const Banner = () => {
         progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
     };
     return (
-        <div>
+        <div className='max-w-90vw'>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -38,6 +38,7 @@ const Banner = () => {
                 modules={[Autoplay, Pagination, Navigation]}
                 onAutoplayTimeLeft={onAutoplayTimeLeft}
                 className="mySwiper"
+                scrollbar={{ draggable: true }}
             >
                 {
                     fakeData.map(fakeDatum => <SwiperSlide key={fakeDatum.id}>
