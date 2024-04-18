@@ -16,7 +16,7 @@ Feature and characteristics->
 2. With out login user can't see the full details of the cards.
 3. If an user is not logged in. He can't see the private routes.
 4. User can see his profile and can update it.
-5.
+5. After logging out user will lose all his access over private router of the website
 
 Currently, two official plugins are available:
 
